@@ -1,3 +1,4 @@
 {
-    "mongoUri": "mongodb+srv://raivekhan:main@cluster0.vzoy9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    "mongoUri": "mongodb+srv://raivekhan:main@cluster0.vzoy9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecretKey": "thisIsMySecretKey"
 }
