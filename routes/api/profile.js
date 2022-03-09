@@ -2,7 +2,8 @@ const express=require('express');
 const router=express.Router();
 
 const Profile = require('../../models/Profile');
-const authMiddleware= require('../../middleware/auth')
+const authMiddleware= require('../../middleware/auth');
+const { check } = require('express-validator');
 
 // @route GET /profile
 // @desc test route
@@ -27,5 +28,15 @@ router.get('/me', authMiddleware, async (req, res)=>{
         res.status(500).send('Server error')
     }
     })
+
+// @route POST /profile
+// @desc Create or Update profile
+// @access private
+router.post('.', [authMiddleware, [
+    check('status', 'Status is required').not().isEmpty(),
+    check('skills', 'Skills is required').not().isEmpty(),
+]], (req, res) => {
+
+})
 
 module.exports=router;
